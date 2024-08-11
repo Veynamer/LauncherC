@@ -21,19 +21,14 @@ class TimeAppWidget : AppWidgetProvider() {
         appWidgetManager: AppWidgetManager,
         appWidgetIds: IntArray
     ) {
-        // There may be multiple widgets active, so update all of them
         for (appWidgetId in appWidgetIds) {
             updateAppWidget(context, appWidgetManager, appWidgetId)
         }
     }
 
-    override fun onEnabled(context: Context) {
-        // Enter relevant functionality for when the first widget is created
-    }
+    override fun onEnabled(context: Context) {}
 
-    override fun onDisabled(context: Context) {
-        // Enter relevant functionality for when the last widget is disabled
-    }
+    override fun onDisabled(context: Context) {}
 
     override fun onAppWidgetOptionsChanged(
         context: Context,
@@ -47,7 +42,6 @@ class TimeAppWidget : AppWidgetProvider() {
     override fun onReceive(context: Context, intent: Intent) {
         super.onReceive(context, intent)
         val wm: AppWidgetManager = AppWidgetManager.getInstance(context) ?: return
-
         val provider = ComponentName(context, javaClass)
         val widgetIds: IntArray = wm.getAppWidgetIds(provider)
 
@@ -55,8 +49,6 @@ class TimeAppWidget : AppWidgetProvider() {
             Intent.ACTION_LOCALE_CHANGED -> onUpdate(context, wm, widgetIds)
         }
     }
-
-
 }
 
 internal fun updateAppWidget(
@@ -64,7 +56,6 @@ internal fun updateAppWidget(
     appWidgetManager: AppWidgetManager,
     appWidgetId: Int
 ) {
-
     val formatDate =
         DateFormat.getBestDateTimePattern(context.resources.configuration.locale, "MMdd")
 
@@ -77,10 +68,9 @@ internal fun updateAppWidget(
     val alarmsIntent = Intent(AlarmClock.ACTION_SHOW_ALARMS)
         .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED)
 
-
     val views = RemoteViews(context.packageName, R.layout.time_app_widget)
-    views.setTextColor(R.id.time, Color.WHITE)
-    views.setTextColor(R.id.date, Color.WHITE)
+    views.setTextColor(R.id.time, Color.parseColor("#FFFFFF")) // Белый цвет для времени
+    views.setTextColor(R.id.date, Color.parseColor("#B0BEC5")) // Светло-серый для даты
     views.setCharSequence(R.id.date, "setFormat24Hour", "$formatDate EEE")
     views.setCharSequence(R.id.date, "setFormat12Hour", "$formatDate EEEa")
     views.setOnClickPendingIntent(
@@ -93,5 +83,3 @@ internal fun updateAppWidget(
     )
     appWidgetManager.updateAppWidget(appWidgetId, views)
 }
-
-

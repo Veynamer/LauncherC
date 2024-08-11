@@ -14,7 +14,7 @@
         android:format24Hour="H:mm"
         android:textSize="64sp"
         android:textColor="#FFFFFF" <!-- Белый цвет -->
-        android:fontFamily="@font/HarmonyOS_Sans_Black" <!-- Используйте пользовательский шрифт -->
+        android:fontFamily="@font/harmonyos-sans-black" <!-- Используйте пользовательский шрифт -->
         tools:text="10:05" />
 
     <TextClock
@@ -26,7 +26,7 @@
         android:format24Hour="MM/dd EEE"
         android:textSize="20sp"
         android:textColor="#B0BEC5" <!-- Светло-серый цвет -->
-        android:fontFamily="@font/HarmonyOS_Sans_Black" <!-- Используйте тот же шрифт -->
+        android:fontFamily="@font/harmonyos-sans-black" <!-- Используйте тот же шрифт -->
         tools:text="10/7 周六下午" />
 
 </RelativeLayout>

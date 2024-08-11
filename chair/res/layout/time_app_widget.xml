@@ -2,7 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="8dp">
+    android:padding="16dp"
+    android:background="@drawable/widget_background"> <!-- Добавьте градиентный фон -->
 
     <TextClock
         android:id="@+id/time"
@@ -11,7 +12,9 @@
         android:layout_alignParentTop="true"
         android:format12Hour="h:mm"
         android:format24Hour="H:mm"
-        android:textSize="56sp"
+        android:textSize="64sp"
+        android:textColor="#FFFFFF" <!-- Белый цвет -->
+        android:fontFamily="@font/custom_font" <!-- Используйте пользовательский шрифт -->
         tools:text="10:05" />
 
     <TextClock
@@ -21,7 +24,9 @@
         android:layout_below="@id/time"
         android:format12Hour="MM/dd EEEa"
         android:format24Hour="MM/dd EEE"
-        android:textSize="16sp"
+        android:textSize="20sp"
+        android:textColor="#B0BEC5" <!-- Светло-серый цвет -->
+        android:fontFamily="@font/custom_font" <!-- Используйте тот же шрифт -->
         tools:text="10/7 周六下午" />
 
 </RelativeLayout>

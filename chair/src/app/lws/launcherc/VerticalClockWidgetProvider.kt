@@ -6,11 +6,12 @@ import android.appwidget.AppWidgetProvider
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.widget.RemoteViews
 import android.text.format.DateFormat
 import com.android.launcher3.R
 
-class VerticalClockWidget : AppWidgetProvider() {
+class VerticalClockWidgetProvider : AppWidgetProvider() {
     override fun onUpdate(
         context: Context,
         appWidgetManager: AppWidgetManager,
@@ -36,24 +37,21 @@ class VerticalClockWidget : AppWidgetProvider() {
 private fun updateAppWidget(context: Context, appWidgetManager: AppWidgetManager, appWidgetId: Int) {
     val views = RemoteViews(context.packageName, R.layout.vertical_clock_widget)
 
-    // Установка текущего времени
     val currentTime = DateFormat.format("HH:mm", System.currentTimeMillis()).toString()
     views.setTextViewText(R.id.time, currentTime)
+    views.setTextColor(R.id.time, Color.parseColor("#FFFFFF")) // Белый цвет для времени
 
-    // Установка текущей даты
     val currentDate = DateFormat.format("MM/dd EEE", System.currentTimeMillis()).toString()
     views.setTextViewText(R.id.date, currentDate)
+    views.setTextColor(R.id.date, Color.parseColor("#B0BEC5")) // Светло-серый для даты
 
-    // Установка PendingIntent для нажатия на время
-    val timeIntent = Intent(context, YourTargetActivity::class.java) // Замените на вашу активность
+    val timeIntent = Intent(context, MainActivity::class.java) // Замените на вашу активность
     val timePendingIntent = PendingIntent.getActivity(context, 0, timeIntent, PendingIntent.FLAG_UPDATE_CURRENT)
     views.setOnClickPendingIntent(R.id.time, timePendingIntent)
 
-    // Установка PendingIntent для нажатия на дату
-    val dateIntent = Intent(context, YourTargetActivity::class.java) // Замените на вашу активность
+    val dateIntent = Intent(context, MainActivity::class.java) // Замените на вашу активность
     val datePendingIntent = PendingIntent.getActivity(context, 1, dateIntent, PendingIntent.FLAG_UPDATE_CURRENT)
     views.setOnClickPendingIntent(R.id.date, datePendingIntent)
 
-    // Обновление виджета
     appWidgetManager.updateAppWidget(appWidgetId, views)
 }

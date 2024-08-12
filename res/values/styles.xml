@@ -426,4 +426,60 @@
         <item name="horizontalPadding">16dp</item>
     </style>
 
+
+    <!-- Основная тема лаунчера -->
+    <style name="BaseLauncherTheme" parent="@android:style/Theme.DeviceDefault.Light">
+        <item name="disabledIconAlpha">.54</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:colorEdgeEffect">#FF8C8C8C</item> <!-- Светло-серый цвет для эффекта края -->
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowBackground">@android:color/white</item> <!-- Белый фон для общего стиля -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowShowWallpaper">true</item>
+        <item name="android:cornerRadius">16dp</item> <!-- Закругленные углы для элементов -->
+        <item name="android:elevation">4dp</item> <!-- Легкая тень для улучшения восприятия слоев -->
+    </style>
+
+    <!-- Тема для лаунчера -->
+    <style name="LauncherTheme" parent="@style/BaseLauncherTheme">
+        <item name="android:textColorSecondary">#FF333333</item> <!-- Темный текст для лучшей читаемости -->
+        <item name="allAppsScrimColor">#1A000000</item> <!-- Легкая затемненность фона -->
+        <item name="allappsHeaderProtectionColor">#FFFAFAFA</item> <!-- Светлый цвет для заголовков -->
+        <item name="allAppsNavBarScrimColor">#33000000</item> <!-- Полупрозрачная панель навигации -->
+        <item name="popupColorPrimary">#FFFAFAFA</item> <!-- Основной цвет всплывающих окон -->
+        <item name="popupColorSecondary">#FFECECEC</item> <!-- Вторичный цвет всплывающих окон -->
+        <item name="popupColorTertiary">#FFDADADA</item> <!-- Третичный цвет всплывающих окон -->
+        <item name="popupColorBackground">#F8F8F8</item> <!-- Более светлый фон для контраста -->
+        <item name="popupTextColor">#FF333333</item> <!-- Текст всплывающих окон -->
+        <item name="popupNotificationDotColor">#FF3B76FF</item> <!-- Синий цвет для уведомлений -->
+        <item name="isMainColorDark">false</item>
+        <item name="isWorkspaceDarkText">false</item>
+        <item name="workspaceTextColor">#FF333333</item>
+        <item name="workspaceShadowColor">#80000000</item> <!-- Тень для текста на рабочем столе -->
+        <item name="workspaceAccentColor">#FF3B76FF</item> <!-- Основной цвет акцентов -->
+        <item name="workspaceSurfaceColor">#FFFAFAFA</item> <!-- Светлый цвет для рабочих поверхностей -->
+        <item name="overviewScrimColor">#33000000</item> <!-- Затемнение для обзора -->
+        <item name="android:statusBarColor">#FF3B76FF</item> <!-- Синий цвет для строки состояния -->
+        <item name="android:navigationBarColor">#FF3B76FF</item> <!-- Синий цвет для панели навигации -->
+        <item name="android:switchStyle">@style/HarmonySwitchStyle</item> <!-- Новый стиль переключателя -->
+    </style>
+
+    <!-- Стиль переключателя, напоминающий HarmonyOS -->
+    <style name="HarmonySwitchStyle" parent="@android:style/Widget.Material.CompoundButton.Switch">
+        <item name="android:switchMinWidth">52dp</item>
+        <item name="android:thumb">@drawable/switch_thumb_harmony</item> <!-- Новый ресурс для тумблера -->
+        <item name="android:track">@drawable/switch_track_harmony</item> <!-- Новый ресурс для трека -->
+    </style>
+
+    <!-- Темная тема лаунчера -->
+    <style name="LauncherTheme.Dark" parent="@style/LauncherTheme">
+        <item name="android:textColorPrimary">#FFCCCCCC</item> <!-- Светлый текст на темном фоне -->
+        <item name="android:textColorSecondary">#FFAAAAAA</item> <!-- Вторичный светлый текст -->
+        <item name="popupColorPrimary">#FF333333</item> <!-- Темный фон для всплывающих окон -->
+        <item name="popupColorSecondary">#FF4C4C4C</item> <!-- Вторичный темный цвет -->
+        <item name="popupColorTertiary">#FF5C5C5C</item> <!-- Третичный темный цвет -->
+        <item name="workspaceTextColor">#FFCCCCCC</item> <!-- Светлый текст на рабочем столе -->
+        <item name="workspaceAccentColor">#FF62B1FF</item> <!-- Светло-синий для акцентов -->
+    </style>
+
 </resources>

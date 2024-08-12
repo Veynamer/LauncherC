@@ -26,7 +26,7 @@
         </receiver>
 
         <receiver
-            android:name="app.lws.launcherc.VerticalClockWidget"
+            android:name="app.lws.launcherc.VerticalClockWidgetProvider"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />

@@ -7,8 +7,10 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
-import android.widget.RemoteViews
+import android.provider.AlarmClock
+import android.provider.CalendarContract
 import android.text.format.DateFormat
+import android.widget.RemoteViews
 import com.android.launcher3.R
 
 class VerticalClockWidgetProvider : AppWidgetProvider() {
@@ -18,7 +20,7 @@ class VerticalClockWidgetProvider : AppWidgetProvider() {
         appWidgetIds: IntArray
     ) {
         for (appWidgetId in appWidgetIds) {
-            updateAppWidget(context, appWidgetManager, appWidgetId)
+            updateVerticalClockWidget(context, appWidgetManager, appWidgetId)
         }
     }
 
@@ -32,26 +34,34 @@ class VerticalClockWidgetProvider : AppWidgetProvider() {
             Intent.ACTION_LOCALE_CHANGED -> onUpdate(context, appWidgetManager, widgetIds)
         }
     }
-}
 
-private fun updateAppWidget(context: Context, appWidgetManager: AppWidgetManager, appWidgetId: Int) {
-    val views = RemoteViews(context.packageName, R.layout.vertical_clock_widget)
+    private fun updateVerticalClockWidget(context: Context, appWidgetManager: AppWidgetManager, appWidgetId: Int) {
+        val views = RemoteViews(context.packageName, R.layout.vertical_clock_widget)
 
-    val currentTime = DateFormat.format("HH:mm", System.currentTimeMillis()).toString()
-    views.setTextViewText(R.id.time, currentTime)
-    views.setTextColor(R.id.time, Color.parseColor("#FFFFFF")) // Белый цвет для времени
+        // Установка текущего времени
+        val currentTime = DateFormat.format("HH:mm", System.currentTimeMillis()).toString()
+        views.setTextViewText(R.id.time, currentTime)
+        views.setTextColor(R.id.time, Color.parseColor("#FFFFFF")) // Белый цвет для времени
 
-    val currentDate = DateFormat.format("MM/dd EEE", System.currentTimeMillis()).toString()
-    views.setTextViewText(R.id.date, currentDate)
-    views.setTextColor(R.id.date, Color.parseColor("#B0BEC5")) // Светло-серый для даты
+        // Установка текущей даты
+        val currentDate = DateFormat.format("MM/dd EEE", System.currentTimeMillis()).toString()
+        views.setTextViewText(R.id.date, currentDate)
+        views.setTextColor(R.id.date, Color.parseColor("#B0BEC5")) // Светло-серый для даты
 
-    val timeIntent = Intent(context, MainActivity::class.java) // Замените на вашу активность
-    val timePendingIntent = PendingIntent.getActivity(context, 0, timeIntent, PendingIntent.FLAG_UPDATE_CURRENT)
-    views.setOnClickPendingIntent(R.id.time, timePendingIntent)
+        // Установка PendingIntent для нажатия на время
+        val alarmsIntent = Intent(AlarmClock.ACTION_SHOW_ALARMS)
+            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED)
+        val timePendingIntent = PendingIntent.getActivity(context, 0, alarmsIntent, PendingIntent.FLAG_UPDATE_CURRENT)
+        views.setOnClickPendingIntent(R.id.time, timePendingIntent)
 
-    val dateIntent = Intent(context, MainActivity::class.java) // Замените на вашу активность
-    val datePendingIntent = PendingIntent.getActivity(context, 1, dateIntent, PendingIntent.FLAG_UPDATE_CURRENT)
-    views.setOnClickPendingIntent(R.id.date, datePendingIntent)
+        // Установка PendingIntent для нажатия на дату
+        val calendarUri = CalendarContract.CONTENT_URI.buildUpon().appendPath("time").build()
+        val calendarIntent = Intent(Intent.ACTION_VIEW).setData(calendarUri)
+            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED)
+        val datePendingIntent = PendingIntent.getActivity(context, 1, calendarIntent, PendingIntent.FLAG_UPDATE_CURRENT)
+        views.setOnClickPendingIntent(R.id.date, datePendingIntent)
 
-    appWidgetManager.updateAppWidget(appWidgetId, views)
+        // Обновление виджета
+        appWidgetManager.updateAppWidget(appWidgetId, views)
+    }
 }

@@ -186,8 +186,8 @@ android {
 
 dependencies {
     implementation libs.androidx.lifecycle.viewmodel
-    implementation libs.androidx.dynamicanimation
-    implementation 'com.google.android.material:material:1.8.0'
+    implementation "androidx.dynamicanimation:dynamicanimation:1.0.0"
+    implementation "com.google.android.material:material:1.12.0"
     implementation libs.androidx.recyclerview.recyclerview
     implementation libs.androidx.preference
     implementation project(':iconloaderlib')
@@ -198,7 +198,6 @@ dependencies {
     api libs.airbnb.lottie
 
     implementation libs.google.protobuf.javalite
-    implementation libs.google.material
     implementation libs.androidx.slice.view
     implementation(libs.androidx.window)
 }

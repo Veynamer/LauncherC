@@ -103,7 +103,7 @@
         <item name="materialColorTertiary">@color/material_color_tertiary</item>
     </style>
 
-    <style name="SwitchStyle" parent="@android:style/Widget.Material.CompoundButton.Switch">
+    <style name="SwitchStyle" parent="Widget.Material3.CompoundButton.Switch">
         <item name="android:switchMinWidth">52dp</item>
         <item name="android:thumb">@drawable/home_settings_switch_thumb</item>
         <item name="android:track">@drawable/home_settings_switch_track</item>

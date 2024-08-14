@@ -1,39 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
-/*
-* Copyright (C) 2008 The Android Open Source Project
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-*      http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
--->
-
 <resources>
-    <!-- Launcher theme -->
+    
     <style name="BaseLauncherTheme" parent="@android:style/Theme.DeviceDefault.Light">
         <item name="disabledIconAlpha">.54</item>
         <item name="android:colorBackgroundCacheHint">@null</item>
-        <item name="android:colorEdgeEffect">#FF757575</item>
+        <item name="android:colorEdgeEffect">#FF8C8C8C</item>
         <item name="android:windowActionBar">false</item>
-        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/white</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowShowWallpaper">true</item>
-    </style>
+    <item name="android:cornerRadius">16dp</item><item name="android:elevation">4dp</item></style>
 
     <style name="LauncherTheme" parent="@style/BaseLauncherTheme">
         <item name="android:textColorSecondary">#DE000000</item>
         <item name="allAppsScrimColor">?attr/materialColorSurfaceDim</item>
-        <item name="allappsHeaderProtectionColor">
-            @color/material_color_surface_container_highest</item>
+        <item name="allappsHeaderProtectionColor">@color/popup_color_tertiary_light</item>
         <item name="allAppsNavBarScrimColor">#66FFFFFF</item>
         <item name="popupColorPrimary">@color/popup_color_primary_light</item>
         <item name="popupColorSecondary">@color/popup_color_secondary_light</item>
@@ -51,6 +31,7 @@
         <item name="workspaceShadowColor">#B0000000</item>
         <item name="workspaceAmbientShadowColor">#40000000</item>
         <item name="workspaceKeyShadowColor">#89000000</item>
+        <item name="workspaceStatusBarScrim">@drawable/workspace_bg</item>
         <item name="widgetsTheme">@style/WidgetContainerTheme</item>
         <item name="folderPaginationColor">@color/folder_pagination_color_light</item>
         <item name="folderPreviewColor">@color/folder_preview_light</item>
@@ -137,6 +118,7 @@
         <item name="workspaceAmbientShadowColor">@android:color/transparent</item>
         <item name="workspaceKeyShadowColor">@android:color/transparent</item>
         <item name="isWorkspaceDarkText">true</item>
+        <item name="workspaceStatusBarScrim">@null</item>
         <item name="workspaceAccentColor">@color/workspace_accent_color_dark</item>
         <item name="dropTargetHoverTextColor">@color/drop_target_hover_text_color_dark</item>
         <item name="dropTargetHoverButtonColor">@color/drop_target_hover_button_color_dark</item>
@@ -150,7 +132,6 @@
         <item name="android:colorControlHighlight">#19FFFFFF</item>
         <item name="android:colorPrimary">#FF212121</item>
         <item name="allAppsScrimColor">?attr/materialColorSurfaceDim</item>
-        <item name="allappsHeaderProtectionColor">@color/material_color_surface_container_low</item>
         <item name="allAppsNavBarScrimColor">#80000000</item>
         <item name="popupColorPrimary">@color/popup_color_primary_dark</item>
         <item name="popupColorSecondary">@color/popup_color_secondary_dark</item>
@@ -179,7 +160,7 @@
         <item name="preloadIconBackgroundColor">@color/preload_icon_background_color_dark</item>
     </style>
 
-    <style name="LauncherTheme.Dark.DarkMainColor" parent="@style/LauncherTheme.Dark"/>
+    <style name="LauncherTheme.Dark.DarkMainColor" parent="@style/LauncherTheme.Dark" />
 
     <style name="LauncherTheme.Dark.DarkText" parent="@style/LauncherTheme.Dark">
         <item name="android:colorControlHighlight">#19212121</item>
@@ -188,13 +169,13 @@
         <item name="workspaceAmbientShadowColor">@android:color/transparent</item>
         <item name="workspaceKeyShadowColor">@android:color/transparent</item>
         <item name="isWorkspaceDarkText">true</item>
+        <item name="workspaceStatusBarScrim">@null</item>
         <item name="workspaceAccentColor">@color/workspace_accent_color_dark</item>
         <item name="dropTargetHoverTextColor">@color/drop_target_hover_text_color_dark</item>
         <item name="dropTargetHoverButtonColor">@color/drop_target_hover_button_color_dark</item>
     </style>
 
-    <!-- A derivative project can extend these themes to customize the application theme without
-         affecting the base theme -->
+    
     <style name="AppTheme" parent="@style/LauncherTheme" />
     <style name="AppTheme.DarkMainColor" parent="@style/LauncherTheme.DarkMainColor" />
     <style name="AppTheme.DarkText" parent="@style/LauncherTheme.DarkText" />
@@ -218,18 +199,14 @@
         <item name="android:layout">@layout/home_settings</item>
     </style>
 
-    <!--
-    Theme overrides to element on homescreen, i.e., which are drawn on top on wallpaper.
-    Various foreground colors are overridden to be workspaceTextColor so that they are properly
-    visible on various wallpapers.
-    -->
+    
     <style name="HomeScreenElementTheme">
         <item name="android:colorEdgeEffect">?attr/workspaceTextColor</item>
         <item name="android:textColorPrimary">?attr/workspaceTextColor</item>
         <item name="android:textColorSecondary">?attr/workspaceTextColor</item>
     </style>
 
-    <!-- Theme for the widget container. -->
+    
     <style name="WidgetContainerTheme" parent="@android:style/Theme.DeviceDefault.Settings">
         <item name="android:colorPrimaryDark">#E8EAED</item>
         <item name="android:textColorSecondary">?android:attr/textColorPrimary</item>
@@ -263,7 +240,7 @@
     </style>
     <style name="WidgetContainerTheme.Dark" parent="AppTheme.Dark">
         <item name="android:colorEdgeEffect">?android:attr/textColorSecondary</item>
-        <item name="android:colorPrimaryDark">#616161</item> <!-- Gray 700 -->
+        <item name="android:colorPrimaryDark">#616161</item> 
         <item name="widgetPickerPrimarySurfaceColor">
             @color/widget_picker_primary_surface_color_dark</item>
         <item name="widgetPickerSecondarySurfaceColor">
@@ -308,7 +285,7 @@
         <item name="android:importantForAccessibility">no</item>
     </style>
 
-    <style name="BaseIconRoot" parent="@android:style/TextAppearance.DeviceDefault.DialogWindowTitle"/>
+    <style name="BaseIconRoot" parent="@android:style/TextAppearance.DeviceDefault.DialogWindowTitle" />
 
     <style name="BaseIconUnBounded" parent="BaseIconRoot">
         <item name="android:layout_width">match_parent</item>
@@ -318,16 +295,16 @@
         <item name="android:gravity">center_horizontal</item>
         <item name="android:textColor">?android:attr/textColorSecondary</item>
         <item name="android:defaultFocusHighlightEnabled">false</item>
-        <!-- No shadows in the base theme -->
+        
         <item name="android:shadowRadius">0</item>
     </style>
 
-    <!-- Base theme for BubbleTextView and sub classes -->
+    
     <style name="BaseIcon" parent="BaseIconUnBounded">
         <item name="android:lines">1</item>
     </style>
 
-    <!-- Base theme for AllApps BubbleTextViews -->
+    
     <style name="BaseIcon.AllApps" parent="BaseIcon">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -337,7 +314,7 @@
     </style>
 
 
-    <!-- Icon displayed on the workspace -->
+    
     <style name="BaseIcon.Workspace.Shadows" parent="BaseIcon">
         <item name="android:shadowRadius">2.0</item>
         <item name="android:shadowColor">?attr/workspaceShadowColor</item>
@@ -349,11 +326,11 @@
         <item name="keyShadowOffsetY">.5dp</item>
     </style>
 
-    <!-- Intentionally empty so we can override -->
+    
     <style name="BaseIcon.Workspace" parent="BaseIcon.Workspace.Shadows">
     </style>
 
-    <!-- Theme for the popup container -->
+    
     <style name="PopupItem">
         <item name="android:colorControlHighlight">?attr/popupColorTertiary</item>
     </style>
@@ -363,7 +340,7 @@
         <item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>
     </style>
 
-    <!-- Drop targets -->
+    
     <style name="DropTargetButtonBase" parent="@android:style/TextAppearance.DeviceDefault.Medium">
         <item name="android:drawablePadding">@dimen/drop_target_button_drawable_padding</item>
         <item name="android:padding">14dp</item>
@@ -376,9 +353,10 @@
     </style>
 
     <style name="DropTargetButton" parent="DropTargetButtonBase" />
-    
 
-    <style name="PrimaryHeadline" parent="@android:style/TextAppearance.DeviceDefault.DialogWindowTitle"/>
+    <style name="TextHeadline" parent="@android:style/TextAppearance.DeviceDefault.DialogWindowTitle" />
+
+    <style name="PrimaryHeadline" parent="@android:style/TextAppearance.DeviceDefault.DialogWindowTitle" />
 
     <style name="TextTitle" parent="@android:style/TextAppearance.DeviceDefault" />
 
@@ -424,8 +402,4 @@
         <item name="horizontalPadding">16dp</item>
     </style>
 
-    <style name="ArrowTipStyle">
-        <item name="arrowTipBackground">@color/arrow_tip_view_bg</item>
-        <item name="arrowTipTextColor">@color/arrow_tip_view_content</item>
-    </style>
 </resources>

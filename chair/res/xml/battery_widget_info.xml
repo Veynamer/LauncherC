@@ -3,7 +3,7 @@
     android:initialLayout="@layout/battery_widget_layout"
     android:minWidth="110dp"
     android:minHeight="110dp"
-    android:previewImage="@drawable/preview"
+    android:previewImage="@drawable/preview_battery_widget"
     android:resizeMode="horizontal|vertical"
     android:updatePeriodMillis="300000"
     android:widgetCategory="home_screen" />

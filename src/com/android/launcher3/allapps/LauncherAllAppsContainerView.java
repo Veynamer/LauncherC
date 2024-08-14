@@ -18,6 +18,10 @@ package com.android.launcher3.allapps;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.WindowInsets;
+import android.renderscript.Allocation;
+import android.renderscript.Element;
+import android.renderscript.RenderScript;
+import android.renderscript.ScriptIntrinsicBlur;
 
 import com.android.launcher3.Launcher;
 import com.android.launcher3.LauncherState;
@@ -52,5 +56,32 @@ public class LauncherAllAppsContainerView extends ActivityAllAppsContainerView<L
     @Override
     public boolean isInAllApps() {
         return mActivityContext.getStateManager().isInStableState(LauncherState.ALL_APPS);
+    }
+
+    @Override
+    protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+        super.onLayout(changed, left, top, right, bottom);
+    
+        Bitmap originalBitmap = ...;
+        Bitmap blurredBitmap = blurBitmap(getContext(), originalBitmap);
+
+        setBackground(new BitmapDrawable(getResources(), blurredBitmap));
+    }
+
+    private Bitmap blurBitmap(Context context, Bitmap bitmap) {
+        Bitmap outputBitmap = Bitmap.createBitmap(bitmap);
+        RenderScript rs = RenderScript.create(context);
+        ScriptIntrinsicBlur blurScript = ScriptIntrinsicBlur.create(rs, Element.U8_4(rs));
+        Allocation input = Allocation.createFromBitmap(rs, bitmap);
+        Allocation output = Allocation.createFromBitmap(rs, outputBitmap);
+
+        blurScript.setRadius(10f);
+        blurScript.setInput(input);
+        blurScript.output(output);
+        blurScript.forEach(output);
+        output.copyTo(outputBitmap);
+        rs.destroy();
+
+    return outputBitmap;
     }
 }

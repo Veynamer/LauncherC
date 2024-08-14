@@ -200,35 +200,11 @@ dependencies {
     implementation("com.github.liu-wanshun:launcherlib-plugincore:13-SNAPSHOT")
     implementation fileTree(dir: "prebuilt", include: 'SystemUI-statsd.jar')
 
-    // QuickSwitch Compat
-    withQuickstepImplementation projects.compatLib
-    withQuickstepImplementation projects.compatLib.compatLibVQ
-    withQuickstepImplementation projects.compatLib.compatLibVR
-    withQuickstepImplementation projects.compatLib.compatLibVS
-    withQuickstepImplementation projects.compatLib.compatLibVT
-    withQuickstepImplementation projects.compatLib.compatLibVU
-
-    // Recents lib dependency
-    withQuickstepCompileOnly projects.hiddenApi
-    withQuickstepImplementation projects.systemUIShared
-    withQuickstepImplementation projects.systemUIAnim
-    withQuickstepImplementation projects.systemUnFold
-    withQuickstepImplementation projects.systemUIViewCapture
-    withQuickstepImplementation projects.systemUILog
-    withQuickstepCompileOnly projects.systemUIPlugin
-    withQuickstepImplementation projects.systemUIPluginCore
-    withQuickstepCompileOnly projects.systemUICommon
-
     api libs.airbnb.lottie
 
     implementation libs.google.protobuf.javalite
     implementation libs.androidx.slice.view
     implementation(libs.androidx.window)
-}
-
-repositories {
-    google()
-    mavenCentral()
 }
 
 protobuf {

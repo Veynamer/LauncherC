@@ -1,6 +1,6 @@
 <resources>
     
-    <style name="BaseLauncherTheme" parent="@android:style/Theme.DeviceDefault.Light">
+    <style name="BaseLauncherTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="disabledIconAlpha">.54</item>
         <item name="android:colorBackgroundCacheHint">@null</item>
         <item name="android:colorEdgeEffect">#FF8C8C8C</item>
@@ -10,7 +10,7 @@
         <item name="android:windowShowWallpaper">true</item>
     <item name="android:cornerRadius">16dp</item><item name="android:elevation">4dp</item></style>
 
-    <style name="LauncherTheme" parent="@style/BaseLauncherTheme">
+    <style name="LauncherTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:textColorSecondary">#DE000000</item>
         <item name="allAppsScrimColor">?attr/materialColorSurfaceDim</item>
         <item name="allappsHeaderProtectionColor">@color/popup_color_tertiary_light</item>
@@ -103,7 +103,7 @@
         <item name="materialColorTertiary">@color/material_color_tertiary</item>
     </style>
 
-    <style name="SwitchStyle" parent="Widget.Material3.CompoundButton.Switch">
+    <style name="SwitchStyle" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:switchMinWidth">52dp</item>
         <item name="android:thumb">@drawable/home_settings_switch_thumb</item>
         <item name="android:track">@drawable/home_settings_switch_track</item>
@@ -111,9 +111,9 @@
         <item name="colorSwitchThumbNormal">@color/switch_thumb_normal_color</item>
     </style>
 
-    <style name="LauncherTheme.DarkMainColor" parent="@style/LauncherTheme" />
+    <style name="LauncherTheme.DarkMainColor" parent="Theme.MaterialComponents.DayNight.NoActionBar" />
 
-    <style name="LauncherTheme.DarkText" parent="@style/LauncherTheme">
+    <style name="LauncherTheme.DarkText" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="workspaceTextColor">@color/workspace_text_color_dark</item>
         <item name="workspaceShadowColor">@android:color/transparent</item>
         <item name="workspaceAmbientShadowColor">@android:color/transparent</item>
@@ -125,7 +125,7 @@
         <item name="dropTargetHoverButtonColor">@color/drop_target_hover_button_color_dark</item>
     </style>
 
-    <style name="LauncherTheme.Dark" parent="@style/LauncherTheme">
+    <style name="LauncherTheme.Dark" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:textColorPrimary">@color/text_color_primary_dark</item>
         <item name="android:textColorSecondary">@color/text_color_secondary_dark</item>
         <item name="android:textColorTertiary">@color/text_color_tertiary_dark</item>
@@ -161,9 +161,9 @@
         <item name="preloadIconBackgroundColor">@color/preload_icon_background_color_dark</item>
     </style>
 
-    <style name="LauncherTheme.Dark.DarkMainColor" parent="@style/LauncherTheme.Dark" />
+    <style name="LauncherTheme.Dark.DarkMainColor" parent="Theme.MaterialComponents.DayNight.NoActionBar" />
 
-    <style name="LauncherTheme.Dark.DarkText" parent="@style/LauncherTheme.Dark">
+    <style name="LauncherTheme.Dark.DarkText" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:colorControlHighlight">#19212121</item>
         <item name="workspaceTextColor">@color/workspace_text_color_dark</item>
         <item name="workspaceShadowColor">@android:color/transparent</item>
@@ -177,38 +177,38 @@
     </style>
 
     
-    <style name="AppTheme" parent="@style/LauncherTheme" />
-    <style name="AppTheme.DarkMainColor" parent="@style/LauncherTheme.DarkMainColor" />
-    <style name="AppTheme.DarkText" parent="@style/LauncherTheme.DarkText" />
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar" />
+    <style name="AppTheme.DarkMainColor" parent="Theme.MaterialComponents.DayNight.NoActionBar" />
+    <style name="AppTheme.DarkText" parent="Theme.MaterialComponents.DayNight.NoActionBar" />
 
-    <style name="AppTheme.Dark" parent="@style/LauncherTheme.Dark" />
-    <style name="AppTheme.Dark.DarkMainColor" parent="@style/LauncherTheme.Dark.DarkMainColor" />
-    <style name="AppTheme.Dark.DarkText" parent="@style/LauncherTheme.Dark.DarkText" />
+    <style name="AppTheme.Dark" parent="Theme.MaterialComponents.DayNight.NoActionBar" />
+    <style name="AppTheme.Dark.DarkMainColor" parent="Theme.MaterialComponents.DayNight.NoActionBar" />
+    <style name="AppTheme.Dark.DarkText" parent="Theme.MaterialComponents.DayNight.NoActionBar" />
 
-    <style name="HomeSettings.Theme" parent="@android:style/Theme.DeviceDefault.Settings">
+    <style name="HomeSettings.Theme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:navigationBarColor">?android:colorPrimaryDark</item>
         <item name="android:windowActionBar">false</item>
         <item name="android:windowNoTitle">true</item>
         <item name="preferenceTheme">@style/HomeSettings.PreferenceTheme</item>
     </style>
 
-    <style name="HomeSettings.PreferenceTheme" parent="@style/PreferenceThemeOverlay.v14.Material">
+    <style name="HomeSettings.PreferenceTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="preferenceFragmentCompatStyle">@style/HomeSettings.FragmentCompatStyle</item>
     </style>
 
-    <style name="HomeSettings.FragmentCompatStyle" parent="@style/PreferenceFragment.Material">
+    <style name="HomeSettings.FragmentCompatStyle" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:layout">@layout/home_settings</item>
     </style>
 
     
-    <style name="HomeScreenElementTheme">
+    <style name="HomeScreenElementTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:colorEdgeEffect">?attr/workspaceTextColor</item>
         <item name="android:textColorPrimary">?attr/workspaceTextColor</item>
         <item name="android:textColorSecondary">?attr/workspaceTextColor</item>
     </style>
 
     
-    <style name="WidgetContainerTheme" parent="@android:style/Theme.DeviceDefault.Settings">
+    <style name="WidgetContainerTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:colorPrimaryDark">#E8EAED</item>
         <item name="android:textColorSecondary">?android:attr/textColorPrimary</item>
         <item name="android:colorEdgeEffect">?android:attr/textColorSecondary</item>
@@ -239,7 +239,7 @@
         <item name="widgetPickerCollapseHandleColor">
             @color/widget_picker_collapse_handle_color_light</item>
     </style>
-    <style name="WidgetContainerTheme.Dark" parent="AppTheme.Dark">
+    <style name="WidgetContainerTheme.Dark" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:colorEdgeEffect">?android:attr/textColorSecondary</item>
         <item name="android:colorPrimaryDark">#616161</item> 
         <item name="widgetPickerPrimarySurfaceColor">
@@ -271,7 +271,7 @@
             @color/widget_picker_collapse_handle_color_dark</item>
     </style>
 
-    <style name="FastScrollerPopup" parent="@android:style/TextAppearance.DeviceDefault.DialogWindowTitle">
+    <style name="FastScrollerPopup" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:minWidth">@dimen/fastscroll_popup_width</item>
         <item name="android:layout_height">@dimen/fastscroll_popup_height</item>
@@ -286,9 +286,9 @@
         <item name="android:importantForAccessibility">no</item>
     </style>
 
-    <style name="BaseIconRoot" parent="@android:style/TextAppearance.DeviceDefault.DialogWindowTitle" />
+    <style name="BaseIconRoot" parent="Theme.MaterialComponents.DayNight.NoActionBar" />
 
-    <style name="BaseIconUnBounded" parent="BaseIconRoot">
+    <style name="BaseIconUnBounded" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_gravity">center</item>
@@ -301,12 +301,12 @@
     </style>
 
     
-    <style name="BaseIcon" parent="BaseIconUnBounded">
+    <style name="BaseIcon" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:lines">1</item>
     </style>
 
     
-    <style name="BaseIcon.AllApps" parent="BaseIcon">
+    <style name="BaseIcon.AllApps" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:stateListAnimator">@animator/all_apps_fastscroll_icon_anim</item>
@@ -316,7 +316,7 @@
 
 
     
-    <style name="BaseIcon.Workspace.Shadows" parent="BaseIcon">
+    <style name="BaseIcon.Workspace.Shadows" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:shadowRadius">2.0</item>
         <item name="android:shadowColor">?attr/workspaceShadowColor</item>
         <item name="ambientShadowColor">?attr/workspaceAmbientShadowColor</item>
@@ -328,21 +328,21 @@
     </style>
 
     
-    <style name="BaseIcon.Workspace" parent="BaseIcon.Workspace.Shadows">
+    <style name="BaseIcon.Workspace" parent="Theme.MaterialComponents.DayNight.NoActionBar">
     </style>
 
     
-    <style name="PopupItem">
+    <style name="PopupItem" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:colorControlHighlight">?attr/popupColorTertiary</item>
     </style>
 
-    <style name="PopupItemIconOnly">
+    <style name="PopupItemIconOnly" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:colorControlHighlight">?attr/popupColorTertiary</item>
         <item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>
     </style>
 
     
-    <style name="DropTargetButtonBase" parent="@android:style/TextAppearance.DeviceDefault.Medium">
+    <style name="DropTargetButtonBase" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:drawablePadding">@dimen/drop_target_button_drawable_padding</item>
         <item name="android:padding">14dp</item>
         <item name="android:includeFontPadding">false</item>
@@ -353,41 +353,41 @@
         <item name="android:background">@drawable/drop_target_background</item>
     </style>
 
-    <style name="DropTargetButton" parent="DropTargetButtonBase" />
+    <style name="DropTargetButton" parent="Theme.MaterialComponents.DayNight.NoActionBar" />
 
-    <style name="TextHeadline" parent="@android:style/TextAppearance.DeviceDefault.DialogWindowTitle" />
+    <style name="TextHeadline" parent="Theme.MaterialComponents.DayNight.NoActionBar" />
 
-    <style name="PrimaryHeadline" parent="@android:style/TextAppearance.DeviceDefault.DialogWindowTitle" />
+    <style name="PrimaryHeadline" parent="Theme.MaterialComponents.DayNight.NoActionBar" />
 
-    <style name="TextTitle" parent="@android:style/TextAppearance.DeviceDefault" />
+    <style name="TextTitle" parent="Theme.MaterialComponents.DayNight.NoActionBar" />
 
-    <style name="Button.TopRounded.Bordered" parent="@android:style/Widget.Material.Button">
+    <style name="Button.TopRounded.Bordered" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:background">@drawable/button_top_rounded_bordered_ripple</item>
         <item name="android:stateListAnimator">@null</item>
     </style>
 
-    <style name="Button.BottomRounded.Colored" parent="@android:style/Widget.Material.Button">
+    <style name="Button.BottomRounded.Colored" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:background">@drawable/button_bottom_rounded_colored_ripple</item>
         <item name="android:stateListAnimator">@null</item>
     </style>
 
-    <style name="Button.Rounded.Colored" parent="@android:style/Widget.Material.Button">
+    <style name="Button.Rounded.Colored" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:background">@drawable/button_rounded_colored_ripple</item>
         <item name="android:stateListAnimator">@null</item>
     </style>
 
-    <style name="Button.FullRounded.Colored" parent="@android:style/Widget.Material.Button">
+    <style name="Button.FullRounded.Colored" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:background">@drawable/full_rounded_colored_ripple</item>
         <item name="android:stateListAnimator">@null</item>
     </style>
 
-    <style name="AddItemActivityTheme" parent="@android:style/Theme.Translucent.NoTitleBar">
+    <style name="AddItemActivityTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="widgetsTheme">@style/WidgetContainerTheme</item>
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:windowTranslucentStatus">true</item>
     </style>
 
-    <style name="FolderStyleDefault">
+    <style name="FolderStyleDefault" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="folderTopPadding">24dp</item>
         <item name="folderCellHeight">94dp</item>
         <item name="folderCellWidth">80dp</item>
@@ -395,11 +395,11 @@
         <item name="folderFooterHeight">56dp</item>
     </style>
 
-    <style name="CellStyleDefault">
+    <style name="CellStyleDefault" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="iconDrawablePadding">7dp</item>
     </style>
 
-    <style name="AllAppsStyleDefault">
+    <style name="AllAppsStyleDefault" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="horizontalPadding">16dp</item>
     </style>
 

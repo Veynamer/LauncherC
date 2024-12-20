@@ -138,7 +138,7 @@ public final class FeatureFlags {
             "ENABLE_ICON_IN_TEXT_HEADER", DISABLED, "Show icon in textheader");
 
     public static final BooleanFlag ENABLE_PREMIUM_HAPTICS_ALL_APPS = getDebugFlag(270396358,
-            "ENABLE_PREMIUM_HAPTICS_ALL_APPS", DISABLED,
+            "ENABLE_PREMIUM_HAPTICS_ALL_APPS", ENABLED,
             "Enables haptics opening/closing All apps");
 
     // TODO(Block 6): Clean up flags
@@ -152,7 +152,7 @@ public final class FeatureFlags {
 
     // TODO(Block 7): Clean up flags
     public static final BooleanFlag ENABLE_FORCED_MONO_ICON = getDebugFlag(270396209,
-            "ENABLE_FORCED_MONO_ICON", DISABLED,
+            "ENABLE_FORCED_MONO_ICON", ENABLED,
             "Enable the ability to generate monochromatic icons, if it is not provided by the app");
 
     // TODO(Block 8): Clean up flags
@@ -181,7 +181,7 @@ public final class FeatureFlags {
 
     // TODO(Block 10): Clean up flags
     public static final BooleanFlag ENABLE_BACK_SWIPE_LAUNCHER_ANIMATION = getDebugFlag(270614790,
-            "ENABLE_BACK_SWIPE_LAUNCHER_ANIMATION", DISABLED,
+            "ENABLE_BACK_SWIPE_LAUNCHER_ANIMATION", ENABLED,
             "Enables predictive back animation from all apps and widgets to home");
 
     // TODO(Block 11): Clean up flags
@@ -281,7 +281,7 @@ public final class FeatureFlags {
 
     // TODO(Block 20): Clean up flags
     public static final BooleanFlag ENABLE_SCRIM_FOR_APP_LAUNCH = getDebugFlag(270393276,
-            "ENABLE_SCRIM_FOR_APP_LAUNCH", DISABLED, "Enables scrim during app launch animation.");
+            "ENABLE_SCRIM_FOR_APP_LAUNCH", ENABLED, "Enables scrim during app launch animation.");
 
     public static final BooleanFlag ENABLE_BACK_SWIPE_HOME_ANIMATION = getDebugFlag(270393426,
             "ENABLE_BACK_SWIPE_HOME_ANIMATION", ENABLED,
@@ -298,7 +298,7 @@ public final class FeatureFlags {
                     + "them in launcher process using hinge sensor values.");
 
     public static final BooleanFlag ENABLE_WIDGET_TRANSITION_FOR_RESIZING = getDebugFlag(268553314,
-            "ENABLE_WIDGET_TRANSITION_FOR_RESIZING", DISABLED,
+            "ENABLE_WIDGET_TRANSITION_FOR_RESIZING", ENABLED,
             "Enable widget transition animation when resizing the widgets");
 
     public static final BooleanFlag PREEMPTIVE_UNFOLD_ANIMATION_START = getDebugFlag(270397209,
@@ -349,7 +349,7 @@ public final class FeatureFlags {
 
     public static final BooleanFlag ALWAYS_USE_HARDWARE_OPTIMIZATION_FOR_FOLDER_ANIMATIONS =
             getDebugFlag(270393096, "ALWAYS_USE_HARDWARE_OPTIMIZATION_FOR_FOLDER_ANIMATIONS",
-            DISABLED, "Always use hardware optimization for folder animations.");
+            ENABLED, "Always use hardware optimization for folder animations.");
 
     public static final BooleanFlag SEPARATE_RECENTS_ACTIVITY = getDebugFlag(270392980,
             "SEPARATE_RECENTS_ACTIVITY", DISABLED,
